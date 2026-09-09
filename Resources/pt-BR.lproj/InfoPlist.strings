@@ -1,23 +1,23 @@
 /* macOS Automation permission prompt. */
-"NSAppleEventsUsageDescription" = "O Vorssaint usa a Automação para mover arquivos no Finder, enviar itens para o Lixo e abrir comandos do Terminal quando você pede ações do Homebrew.";
+"NSAppleEventsUsageDescription" = "O YH usa a Automação para mover arquivos no Finder, enviar itens para o Lixo e abrir comandos do Terminal quando você pede ações do Homebrew.";
 
 /* macOS Screen & System Audio Recording permission prompt. */
-"NSAudioCaptureUsageDescription" = "O Vorssaint usa o áudio de cada app para ajustar o volume no mixer e para incluir o som do Mac nas gravações de tela que você iniciar. Nada sai do seu Mac.";
+"NSAudioCaptureUsageDescription" = "O YH usa o áudio de cada app para ajustar o volume no mixer e para incluir o som do Mac nas gravações de tela que você iniciar. Nada sai do seu Mac.";
 
 /* macOS Bluetooth permission prompt. */
-"NSBluetoothAlwaysUsageDescription" = "O Vorssaint usa o Bluetooth apenas para ler a bateria dos periféricos conectados. Nada sai do seu Mac.";
+"NSBluetoothAlwaysUsageDescription" = "O YH usa o Bluetooth apenas para ler a bateria dos periféricos conectados. Nada sai do seu Mac.";
 
 /* macOS Microphone permission prompt. */
-"NSMicrophoneUsageDescription" = "O Vorssaint grava seu microfone apenas quando você o ativa em uma gravação de tela. O áudio fica no seu Mac, a menos que você escolha criar um link temporário.";
+"NSMicrophoneUsageDescription" = "O YH grava seu microfone apenas quando você o ativa em uma gravação de tela. O áudio fica no seu Mac, a menos que você escolha criar um link temporário.";
 
 /* macOS Camera permission prompt. */
-"NSCameraUsageDescription" = "O Vorssaint mostra sua câmera apenas na janela de prévia que você abre, para conferir como você está antes de uma chamada. Nada é gravado nem sai do seu Mac.";
+"NSCameraUsageDescription" = "O YH mostra sua câmera apenas na janela de prévia que você abre, para conferir como você está antes de uma chamada. Nada é gravado nem sai do seu Mac.";
 
 /* macOS Downloads folder permission prompt. */
-"NSDownloadsFolderUsageDescription" = "O Vorssaint consulta metadados locais em Downloads para revisar, organizar ou mover para a Lixeira apenas os arquivos confirmados do WhatsApp que você escolher.";
+"NSDownloadsFolderUsageDescription" = "O YH consulta metadados locais em Downloads para revisar, organizar ou mover para a Lixeira apenas os arquivos confirmados do WhatsApp que você escolher.";
 
 /* macOS user-selected organizer destination prompts. */
-"NSDesktopFolderUsageDescription" = "O Vorssaint organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
-"NSDocumentsFolderUsageDescription" = "O Vorssaint organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
-"NSNetworkVolumesUsageDescription" = "O Vorssaint organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
-"NSRemovableVolumesUsageDescription" = "O Vorssaint organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
+"NSDesktopFolderUsageDescription" = "O YH organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
+"NSDocumentsFolderUsageDescription" = "O YH organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
+"NSNetworkVolumesUsageDescription" = "O YH organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";
+"NSRemovableVolumesUsageDescription" = "O YH organiza downloads confirmados do WhatsApp em uma pasta de destino escolhida explicitamente por você.";

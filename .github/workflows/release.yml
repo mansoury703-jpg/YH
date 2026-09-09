@@ -17,11 +17,11 @@ jobs:
   preflight:
     name: Verify trusted release ref
     if: >-
-      github.repository == 'vorssaint/vorssaint-utils' &&
+      github.repository == 'yh/yh-utils' &&
       github.event_name == 'push' &&
       github.ref_type == 'tag' &&
-      github.actor == 'vorssaint' &&
-      github.triggering_actor == 'vorssaint'
+      github.actor == 'yh' &&
+      github.triggering_actor == 'yh'
     runs-on: macos-26
     timeout-minutes: 30
     permissions:
@@ -74,11 +74,11 @@ jobs:
     needs: preflight
     if: >-
       needs.preflight.result == 'success' &&
-      github.repository == 'vorssaint/vorssaint-utils' &&
+      github.repository == 'yh/yh-utils' &&
       github.event_name == 'push' &&
       github.ref_type == 'tag' &&
-      github.actor == 'vorssaint' &&
-      github.triggering_actor == 'vorssaint'
+      github.actor == 'yh' &&
+      github.triggering_actor == 'yh'
     runs-on: macos-26
     timeout-minutes: 30
     environment: release-signing
@@ -124,11 +124,11 @@ jobs:
 
       - name: Verify release signature
         run: |
-          REQUIREMENT='identifier "com.vorssaint.utils" and anchor apple generic and certificate leaf[subject.OU] = "3D485NHW29"'
-          codesign --verify --deep --strict -R="$REQUIREMENT" build/stage/Vorssaint.app
+          REQUIREMENT='identifier "com.yh.utils" and anchor apple generic and certificate leaf[subject.OU] = "3D485NHW29"'
+          codesign --verify --deep --strict -R="$REQUIREMENT" build/stage/YH.app
 
       - name: Selftest
-        run: ./build/Vorssaint --selftest
+        run: ./build/YH --selftest
 
       - name: Notarize app
         env:
@@ -136,7 +136,7 @@ jobs:
           NOTARY_API_KEY_P8: ${{ secrets.NOTARY_API_KEY_P8 }}
           NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
           NOTARY_ISSUER_ID: ${{ secrets.NOTARY_ISSUER_ID }}
-        run: ./Tools/notarize.sh build/stage/Vorssaint.app
+        run: ./Tools/notarize.sh build/stage/YH.app
 
       - name: Package DMG
         run: ./Tools/make-dmg.sh
@@ -162,7 +162,7 @@ jobs:
           VERSION="${GITHUB_REF_NAME#v}"
           mkdir -p dist/showcase
           if [[ "$VERSION" == "3.1.4" ]]; then
-            ASSET="vorssaint-3.1.4-showcase-1.mp4"
+            ASSET="yh-3.1.4-showcase-1.mp4"
             SOURCE="ReleaseAssets/$ASSET"
             TARGET="dist/showcase/$ASSET"
             if [[ -f "$SOURCE" ]]; then
@@ -170,7 +170,7 @@ jobs:
             fi
             if [[ ! -s "$TARGET" ]]; then
               echo "Missing required showcase media: $TARGET" >&2
-              echo "The app expects https://github.com/vorssaint/vorssaint-utils/releases/download/v3.1.4/$ASSET" >&2
+              echo "The app expects https://github.com/yh/yh-utils/releases/download/v3.1.4/$ASSET" >&2
               exit 1
             fi
           fi
@@ -188,11 +188,11 @@ jobs:
           }
           trap cleanup EXIT
           hdiutil attach -nobrowse -readonly -mountpoint "$MP" "$DMG"
-          spctl -a -t exec -vv "$MP/Vorssaint.app" 2>&1 | tee /tmp/spctl.txt
+          spctl -a -t exec -vv "$MP/YH.app" 2>&1 | tee /tmp/spctl.txt
           grep -q "source=Notarized Developer ID" /tmp/spctl.txt
-          REQUIREMENT='identifier "com.vorssaint.utils" and anchor apple generic and certificate leaf[subject.OU] = "3D485NHW29"'
-          codesign --verify --deep --strict -R="$REQUIREMENT" "$MP/Vorssaint.app"
-          xcrun stapler validate "$MP/Vorssaint.app"
+          REQUIREMENT='identifier "com.yh.utils" and anchor apple generic and certificate leaf[subject.OU] = "3D485NHW29"'
+          codesign --verify --deep --strict -R="$REQUIREMENT" "$MP/YH.app"
+          xcrun stapler validate "$MP/YH.app"
 
       - name: Release notes from CHANGELOG
         id: notes
@@ -207,7 +207,7 @@ jobs:
           {
             printf '%s\n' "$NOTES"
             echo ""
-            echo "Signed with an Apple Developer ID and notarized by Apple, so it downloads and opens normally. Requires macOS 14 or later. Open the .dmg below and drag Vorssaint to Applications."
+            echo "Signed with an Apple Developer ID and notarized by Apple, so it downloads and opens normally. Requires macOS 14 or later. Open the .dmg below and drag YH to Applications."
           } > "$NOTES_FILE"
           {
             echo "file=$NOTES_FILE"
@@ -252,11 +252,11 @@ jobs:
     needs: release
     if: >-
       needs.release.result == 'success' &&
-      github.repository == 'vorssaint/vorssaint-utils' &&
+      github.repository == 'yh/yh-utils' &&
       github.event_name == 'push' &&
       github.ref_type == 'tag' &&
-      github.actor == 'vorssaint' &&
-      github.triggering_actor == 'vorssaint'
+      github.actor == 'yh' &&
+      github.triggering_actor == 'yh'
     runs-on: macos-26
     timeout-minutes: 10
     permissions:

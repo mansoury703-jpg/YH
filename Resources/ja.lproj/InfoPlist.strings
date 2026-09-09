@@ -1,23 +1,23 @@
 /* macOS Automation permission prompt. */
-"NSAppleEventsUsageDescription" = "Vorssaintは、Finderでのファイル移動、項目のゴミ箱への移動、Homebrewの操作を依頼したときのターミナルコマンドの実行にオートメーションを使用します。";
+"NSAppleEventsUsageDescription" = "YHは、Finderでのファイル移動、項目のゴミ箱への移動、Homebrewの操作を依頼したときのターミナルコマンドの実行にオートメーションを使用します。";
 
 /* macOS Screen & System Audio Recording permission prompt. */
-"NSAudioCaptureUsageDescription" = "Vorssaintは、ミキサーで各アプリの音量を調整するため、また開始した画面収録にMacの音声を含めるために、各アプリの音声を使用します。Macの外に送信されることはありません。";
+"NSAudioCaptureUsageDescription" = "YHは、ミキサーで各アプリの音量を調整するため、また開始した画面収録にMacの音声を含めるために、各アプリの音声を使用します。Macの外に送信されることはありません。";
 
 /* macOS Bluetooth permission prompt. */
-"NSBluetoothAlwaysUsageDescription" = "Vorssaintは、接続済み周辺機器のバッテリー残量を読み取るためだけにBluetoothを使用します。データがMacの外に送信されることはありません。";
+"NSBluetoothAlwaysUsageDescription" = "YHは、接続済み周辺機器のバッテリー残量を読み取るためだけにBluetoothを使用します。データがMacの外に送信されることはありません。";
 
 /* macOS Microphone permission prompt. */
-"NSMicrophoneUsageDescription" = "Vorssaintは、画面収録でマイクをオンにしたときだけ音声を収録します。一時リンクを作成しない限り、音声はMac上に保存されます。";
+"NSMicrophoneUsageDescription" = "YHは、画面収録でマイクをオンにしたときだけ音声を収録します。一時リンクを作成しない限り、音声はMac上に保存されます。";
 
 /* macOS Camera permission prompt. */
-"NSCameraUsageDescription" = "Vorssaintは、開いたプレビューウインドウにのみカメラを表示し、通話前に自分の映りを確認できるようにします。何も録画されず、Macの外に送信されることもありません。";
+"NSCameraUsageDescription" = "YHは、開いたプレビューウインドウにのみカメラを表示し、通話前に自分の映りを確認できるようにします。何も録画されず、Macの外に送信されることもありません。";
 
 /* macOS Downloads folder permission prompt. */
-"NSDownloadsFolderUsageDescription" = "Vorssaintは、ダウンロード内のローカルメタデータを確認し、選択した確認済みWhatsAppファイルだけを確認、整理、またはゴミ箱へ移動します。";
+"NSDownloadsFolderUsageDescription" = "YHは、ダウンロード内のローカルメタデータを確認し、選択した確認済みWhatsAppファイルだけを確認、整理、またはゴミ箱へ移動します。";
 
 /* macOS user-selected organizer destination prompts. */
-"NSDesktopFolderUsageDescription" = "Vorssaintは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
-"NSDocumentsFolderUsageDescription" = "Vorssaintは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
-"NSNetworkVolumesUsageDescription" = "Vorssaintは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
-"NSRemovableVolumesUsageDescription" = "Vorssaintは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
+"NSDesktopFolderUsageDescription" = "YHは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
+"NSDocumentsFolderUsageDescription" = "YHは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
+"NSNetworkVolumesUsageDescription" = "YHは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";
+"NSRemovableVolumesUsageDescription" = "YHは、確認済みのWhatsAppダウンロードを、明示的に選択した保存先フォルダに整理します。";

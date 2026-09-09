@@ -1,4 +1,4 @@
-# Contributing to Vorssaint
+# Contributing to YH
 
 Thanks for the interest. This project aims to stay small, native and readable.
 
@@ -10,10 +10,10 @@ under GPL-3.0-or-later.
 ## Getting started
 
 ```sh
-git clone https://github.com/vorssaint/vorssaint-utils.git
-cd vorssaint-utils
+git clone https://github.com/mansoury703-jpg/YH.git
+cd yh-utils
 ./build.sh                         # build and assemble the bundle
-./build/Vorssaint --selftest       # quick health check (SELFTEST OK)
+./build/YH --selftest       # quick health check (SELFTEST OK)
 ./build.sh --install               # install into /Applications and launch
 ```
 
@@ -32,7 +32,7 @@ macOS ties Accessibility and Screen Recording grants to the hash, so each
 rebuild silently orphans them: System Settings keeps showing the app as
 granted, the app is no longer trusted, and no new prompt appears. Builds that
 install (`--dev` or `--install`) therefore create a free, self signed identity
-called `Vorssaint Utils Signing` in a dedicated keychain automatically when no
+called `YH Utils Signing` in a dedicated keychain automatically when no
 identity is installed. For a build you do not install, run the same setup once
 yourself:
 
@@ -43,7 +43,7 @@ yourself:
 Either way `build.sh` then signs local builds with it and gives them a
 constant designated requirement, so granted permissions stick across rebuilds.
 If a permission was granted to an earlier ad-hoc build, clear the stale grant
-once (`tccutil reset Accessibility com.vorssaint.utils.dev`) and grant it
+once (`tccutil reset Accessibility com.mansoury703.yh.dev`) and grant it
 again. The identity is a local convenience only and never shows up outside
 the keychain.
 
@@ -53,18 +53,18 @@ environment, then
 **notarizes** and staples them through `Tools/notarize.sh`, with secrets
 `NOTARY_API_KEY_P8`, `NOTARY_KEY_ID` and `NOTARY_ISSUER_ID`, so downloads open
 with no Gatekeeper warning. `build.sh` prefers the Developer ID identity when it
-is present, with the hardened runtime and `Resources/Vorssaint.entitlements`,
+is present, with the hardened runtime and `Resources/YH.entitlements`,
 and falls back to the self signed identity, then to ad hoc.
 
 ## Project layout
 
 | Folder | Role |
 |---|---|
-| `Sources/Vorssaint/App` | App lifecycle and the menu bar status item |
-| `Sources/Vorssaint/Core` | Localization, permissions, UserDefaults keys |
-| `Sources/Vorssaint/Services` | All behavior, like energy, monitor, scroll and switcher |
-| `Sources/Vorssaint/UI` | SwiftUI views only, no business logic |
-| `Sources/Vorssaint/Support` | `--selftest` and `--sensors` diagnostics |
+| `Sources/YH/App` | App lifecycle and the menu bar status item |
+| `Sources/YH/Core` | Localization, permissions, UserDefaults keys |
+| `Sources/YH/Services` | All behavior, like energy, monitor, scroll and switcher |
+| `Sources/YH/UI` | SwiftUI views only, no business logic |
+| `Sources/YH/Support` | `--selftest` and `--sensors` diagnostics |
 | `Tools` | Icon generator and DMG packaging |
 
 A few conventions to keep in mind.
@@ -86,7 +86,7 @@ Every user facing string lives in `Core/Localization.swift` as a field of the
 it, and the compiler is the completeness check, so a translation can never
 silently fall out of sync.
 
-Vorssaint ships these locales today: English (US), Português (Brasil),
+YH ships these locales today: English (US), Português (Brasil),
 Türkçe, Русский, Español, Deutsch, Français, Italiano, 日本語, 한국어, 简体中文,
 繁體中文（台灣） and 繁體中文（香港）. The non-base translations live in
 `Core/Localizations/`. To add a language, add a case to `AppLanguage`, provide
@@ -102,7 +102,7 @@ look like `Tp…` and `Te…`, GPU is `Tg…`, and battery runs from `TB0T` to
 `TB2T`. If a new Apple Silicon generation renames the keys, run this
 
 ```sh
-./build/Vorssaint --sensors
+./build/YH --sensors
 ```
 
 and open a PR with the dump and the adjusted prefixes.
@@ -110,9 +110,9 @@ and open a PR with the dump and the adjusted prefixes.
 ## Reporting bugs and requesting features
 
 You do not need to write code to help. Use the issue forms on the
-[new issue](https://github.com/vorssaint/vorssaint-utils/issues/new/choose) page.
+[new issue](https://github.com/mansoury703-jpg/YH/issues/new/choose) page.
 
-- **Bug report.** Include your Vorssaint version from Settings under About and
+- **Bug report.** Include your YH version from Settings under About and
   your macOS version, plus clear steps to reproduce. The
   [troubleshooting guide](docs/TROUBLESHOOTING.md) explains what makes a report
   useful.
@@ -138,7 +138,7 @@ For general help and every support channel, see [support](SUPPORT.md).
    whether that will still be here, what it exposes the project to, what it
    drags in as a runtime dependency and who then carries it when that breaks,
    and how much permanent surface it adds against how many people will ever
-   switch it on. Vorssaint reaches for what macOS almost does; it does not
+   switch it on. YH reaches for what macOS almost does; it does not
    grow a subsystem of its own. Intel support, hardcoded integrations with
    particular third-party apps, a plugin system and video downloading have all
    been declined already, and [contributing with an

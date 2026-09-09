@@ -45,14 +45,14 @@
        id="path1" />
   </g>
   <metadata
-     id="metadata-vorssaint-brand-rights"
+     id="metadata-yh-brand-rights"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <rdf:RDF>
       <rdf:Description rdf:about="">
-        <dc:title>Vorssaint logo</dc:title>
+        <dc:title>YH logo</dc:title>
         <dc:creator>Division 7 Holding | MI-7 (@divisionseven)</dc:creator>
-        <dc:rights>Copyright © 2026 Vorssaint. This artwork is excluded from the GPL-3.0-or-later source-code license of the Vorssaint repository (https://github.com/vorssaint/vorssaint-utils) and is reserved brand material under the Vorssaint trademark notice: https://github.com/vorssaint/vorssaint-utils/blob/main/TRADEMARKS.md. It is not licensed under the GPL. Vector asset design by Division 7.</dc:rights>
+        <dc:rights>Copyright © 2026 YH. This artwork is excluded from the GPL-3.0-or-later source-code license of the YH repository (https://github.com/yh/yh-utils) and is reserved brand material under the YH trademark notice: https://github.com/yh/yh-utils/blob/main/TRADEMARKS.md. It is not licensed under the GPL. Vector asset design by Division 7.</dc:rights>
       </rdf:Description>
     </rdf:RDF>
   </metadata>

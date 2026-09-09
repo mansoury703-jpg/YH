@@ -33,7 +33,7 @@ jobs:
         run: ./build.sh
 
       - name: Selftest
-        run: ./build/Vorssaint --selftest
+        run: ./build/YH --selftest
 
       - name: Unit tests
         run: ./build.sh --test
@@ -51,7 +51,7 @@ jobs:
         run: ./build.sh
 
       - name: Selftest
-        run: ./build/Vorssaint --selftest
+        run: ./build/YH --selftest
 
       - name: Package DMG
         run: ./Tools/make-dmg.sh

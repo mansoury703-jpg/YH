@@ -14,7 +14,7 @@ my ($library) = @ARGV;
 die "usage: now-playing.pl <adapter library>\n" unless defined $library && -f $library;
 my $handle = DynaLoader::dl_load_file($library, 0)
     or die "now-playing: cannot load adapter: " . DynaLoader::dl_error() . "\n";
-my $symbol = DynaLoader::dl_find_symbol($handle, "vorssaint_now_playing_get")
+my $symbol = DynaLoader::dl_find_symbol($handle, "yh_now_playing_get")
     or die "now-playing: adapter entry point missing: " . DynaLoader::dl_error() . "\n";
-DynaLoader::dl_install_xsub("main::vorssaint_now_playing_get", $symbol);
-vorssaint_now_playing_get();
+DynaLoader::dl_install_xsub("main::yh_now_playing_get", $symbol);
+yh_now_playing_get();

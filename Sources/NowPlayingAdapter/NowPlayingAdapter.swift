@@ -7,7 +7,7 @@
 // nothing unless the calling process carries Apple's own signature, so the
 // app cannot read it in-process any more. `/usr/bin/perl` is a platform
 // binary and can; `Resources/now-playing.pl` loads this library into perl
-// with DynaLoader and calls `vorssaint_now_playing_get`. The app runs that
+// with DynaLoader and calls `yh_now_playing_get`. The app runs that
 // through `BoundedProcessRunner` and parses the line
 // (`RadialNowPlayingSupport.adapterReply`). Nothing here is linked into the
 // app: the library is built and signed on its own by build.sh.
@@ -42,14 +42,14 @@ private func emit(_ reply: [String: Any]) {
 }
 
 /// Entry point called from perl. Prints exactly one line and returns.
-@_cdecl("vorssaint_now_playing_get")
-public func vorssaintNowPlayingGet() {
+@_cdecl("yh_now_playing_get")
+public func yhNowPlayingGet() {
     let handle = dlopen("/System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote", RTLD_LAZY)
     guard let getInfo = function(handle, "MRMediaRemoteGetNowPlayingInfo", as: InfoFunction.self) else {
         emit(["error": "MRMediaRemoteGetNowPlayingInfo unavailable"])
         return
     }
-    let queue = DispatchQueue(label: "com.vorssaint.now-playing-adapter")
+    let queue = DispatchQueue(label: "com.mansoury703.yh.now-playing-adapter")
     let group = DispatchGroup()
     let lock = NSLock()
     var reply: [String: Any] = [:]
